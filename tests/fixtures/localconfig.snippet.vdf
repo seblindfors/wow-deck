@@ -1,0 +1,16 @@
+"UserLocalConfigStore"
+{
+	"apps"
+	{
+		"2731573482"
+		{
+			"UseSteamControllerConfig"		"0"
+			"SteamControllerRumble"		"-1"
+			"SteamControllerRumbleIntensity"		"320"
+		}
+		"413150"
+		{
+			"LastPlayed"		"1782074015"
+		}
+	}
+}

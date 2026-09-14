@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ShadowBlip/InputPlumber/main/rootfs/usr/share/inputplumber/schema/device_profile_v1.json
+# WoW Deck game profile. Two virtual controllers from the one physical Deck controller:
+#   deck-uhid  : a virtual Steam Deck controller for Steam itself. Steam button, "..." menu,
+#                Steam+X keyboard, screenshots and the game's Steam Input layout (trackpads as
+#                mouse, etc.) keep working exactly as stock. Steam's virtual Xbox pad is hidden
+#                from the game by the launch wrapper (SDL_GAMECONTROLLER_IGNORE_DEVICES).
+#   ds5-edge   : a DualSense Edge read directly by WoW over hidraw: every button plus the four
+#                back grips as native PADPADDLE1-4. Steam ignores it (SDL ignore list in
+#                Steam's own environment, ~/.config/environment.d/50-wow-deck.conf).
+# InputPlumber sends each input to every target that supports it, so no button remaps are
+# needed here; the Deck's own default profile has nothing Deck-specific either.
+version: 1
+kind: DeviceProfile
+name: WoW Deck (Steam Deck for Steam + DualSense Edge for WoW)
+target_devices:
+  - ds5-edge
+  - deck-uhid
+mapping: []

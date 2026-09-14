@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=WoW Deck
+Comment=World of Warcraft on the Steam Deck: setup, native paddles, ConsolePort, addon manager
+Exec=__BIN__ hub
+Icon=__ICON__
+StartupWMClass=org.consoleport.wowdeck
+Terminal=false
+Categories=Game;Settings;

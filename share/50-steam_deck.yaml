@@ -1,0 +1,29 @@
+# wow-deck override of /usr/share/inputplumber/devices/50-steam_deck.yaml.
+# Same filename => this file takes precedence (devices.d sorts before /usr/share).
+# Changes vs upstream: auto_manage true (take the controller at boot), keyboard source
+# dropped (upstream grabs "AT Translated Set 2 keyboard", which breaks steamos-powerbuttond),
+# idle target deck-uhid (what steamos-manager itself selects, so Steam sees a Deck).
+# The WoW launch wrapper switches the target to ds5-edge while the game runs.
+version: 1
+kind: CompositeDevice
+name: Steam Deck
+single_source: false
+matches:
+  - dmi_data:
+      product_name: Galileo
+      sys_vendor: Valve
+      cpu_vendor: AuthenticAMD
+  - dmi_data:
+      product_name: Jupiter
+      sys_vendor: Valve
+      cpu_vendor: AuthenticAMD
+source_devices:
+  - group: gamepad
+    hidraw:
+      vendor_id: 0x28de
+      product_id: 0x1205
+      interface_num: 2
+options:
+  auto_manage: true
+target_devices:
+  - deck-uhid

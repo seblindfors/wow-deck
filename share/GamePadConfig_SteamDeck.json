@@ -1,0 +1,46 @@
+{
+    "headerComments": [
+        "Steam Deck native paddles: the Deck controller is presented to Proton as a DualSense Edge",
+        "(InputPlumber ds5-edge target, VID 054C PID 0DF2). WoW maps the Edge natively; this file only",
+        "renames it, sets letter labels, and orders the paddles Deck-style: L4=P1 R4=P2 L5=P3 R5=P4.",
+        "Managed by wow-deck; see wow-resources/docs/tasks/steam-deck-native-paddles.md"
+    ],
+    "configVersion": 4,
+    "configs": [
+        {
+            "comment": "Steam Deck (emulated DualSense Edge)",
+            "name": "Steam Deck",
+            "labelStyle": "Letters",
+            "configID": {
+                "vendorID": 1356,
+                "productID": 3570
+            },
+            "rawButtonMappings": [
+                {
+                    "comment": "L4 (LEFT_FUNCTION)",
+                    "rawIndex": 19,
+                    "button": "PADPADDLE1"
+                },
+                {
+                    "comment": "R4 (RIGHT_FUNCTION)",
+                    "rawIndex": 18,
+                    "button": "PADPADDLE2"
+                },
+                {
+                    "comment": "L5 (LEFT_PADDLE)",
+                    "rawIndex": 17,
+                    "button": "PADPADDLE3"
+                },
+                {
+                    "comment": "R5 (RIGHT_PADDLE)",
+                    "rawIndex": 16,
+                    "button": "PADPADDLE4"
+                },
+                {
+                    "comment": "Steam button (PS/Guide on the emulated Edge): reserved for Steam, unbound in game",
+                    "rawIndex": 5
+                }
+            ]
+        }
+    ]
+}
